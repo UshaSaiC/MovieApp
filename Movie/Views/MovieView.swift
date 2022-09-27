@@ -10,33 +10,43 @@ import SwiftUI
 struct MovieView: View {
     
     @ObservedObject var movieDataManager = MovieDataManager()
+    @State private var searchText = ""
     
     var body: some View {
-        
         NavigationView{
-            List(movieDataManager.cards) { card in
-                ZStack(alignment: .leading) {
-                    HStack {
-                        MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
+            List {
+                if searchText.isEmpty {
+                    ForEach(movieDataManager.cards) { card in
+                        ZStack(alignment: .leading) {
+                            HStack {
+                                MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
+                            }
+                            .listStyle(PlainListStyle())
+                            NavigationLink(destination: MovieDetailView(content: card.content)) {
+                                EmptyView()
+                            }
+                            .opacity(0.0)
+                        }
                     }
-                    .listStyle(PlainListStyle())
-                    NavigationLink(destination: MovieDetailView(content: card.content)) {
-                        EmptyView()
+                } else {
+                    ForEach(movieDataManager.cards) {card in
+                        if card.content.title.localizedCaseInsensitiveContains(searchText){
+                            ZStack(alignment: .leading) {
+                                HStack {
+                                    MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
+                                }
+                                .listStyle(PlainListStyle())
+                                NavigationLink(destination: MovieDetailView(content: card.content)) {
+                                    EmptyView()
+                                }
+                                .opacity(0.0)
+                            }
+                        }
                     }
-                    .opacity(0.0)
                 }
             }
             .navigationBarTitle("Movies", displayMode: .inline)
-            .toolbar {
-                Button {
-                    print("Search button tapped")
-                } label: {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .scaledToFit()
-                }
-
-            }
+            .searchable(text: $searchText, prompt: "Search for movie")
         }.onAppear {
             self.movieDataManager.fetchData()
         }
