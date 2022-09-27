@@ -19,6 +19,7 @@
 		B29A52AA28E2A57B009EB5D3 /* TextImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A52A928E2A57B009EB5D3 /* TextImageModifier.swift */; };
 		B29A52AD28E2A6A7009EB5D3 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A52AC28E2A6A7009EB5D3 /* Formatter.swift */; };
 		B29A52B028E2A8A0009EB5D3 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A52AF28E2A8A0009EB5D3 /* MovieViewModel.swift */; };
+		B29A52B428E32071009EB5D3 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29A52B328E32071009EB5D3 /* StarsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		B29A52A928E2A57B009EB5D3 /* TextImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextImageModifier.swift; sourceTree = "<group>"; };
 		B29A52AC28E2A6A7009EB5D3 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		B29A52AF28E2A8A0009EB5D3 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
+		B29A52B328E32071009EB5D3 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				B287B31C28E1E36A00F8C8DF /* MovieDetailView.swift */,
 				B287B32428E2020400F8C8DF /* MovieImageView.swift */,
 				B287B32628E2137A00F8C8DF /* MovieRatingsView.swift */,
+				B29A52B328E32071009EB5D3 /* StarsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				B287B32728E2137A00F8C8DF /* MovieRatingsView.swift in Sources */,
 				B287B31D28E1E36A00F8C8DF /* MovieDetailView.swift in Sources */,
 				B287B32028E1E7A300F8C8DF /* MovieData.swift in Sources */,
+				B29A52B428E32071009EB5D3 /* StarsView.swift in Sources */,
 				B287B30B28E1E2EF00F8C8DF /* MovieApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

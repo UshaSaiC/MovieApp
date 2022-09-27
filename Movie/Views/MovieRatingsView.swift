@@ -16,7 +16,7 @@ struct MovieRatingsView: View {
                     Group {
                         Text("Ratings : ")
                         Spacer()
-                        Text(rating.formatted())
+                        StarsView(rating: rating)
                 }
                     .padding(.horizontal)
             }
