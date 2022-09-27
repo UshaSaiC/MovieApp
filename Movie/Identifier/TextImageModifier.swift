@@ -11,7 +11,7 @@ struct TextImageModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
             .font(.title3)
-            .foregroundColor(.accentColor)
+            .foregroundColor(Color("Text"))
             .background(Color("Background"))
             .padding(.horizontal, 8)
             .padding(.vertical, 15)

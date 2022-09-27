@@ -15,33 +15,16 @@ struct MovieView: View {
     var body: some View {
         NavigationView{
             List {
-                if searchText.isEmpty {
-                    ForEach(movieDataManager.cards) { card in
-                        ZStack(alignment: .leading) {
-                            HStack {
-                                MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
-                            }
-                            .listStyle(PlainListStyle())
-                            NavigationLink(destination: MovieDetailView(content: card.content)) {
-                                EmptyView()
-                            }
-                            .opacity(0.0)
+                ForEach(searchResults) { card in
+                    ZStack(alignment: .leading) {
+                        HStack {
+                            MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
                         }
-                    }
-                } else {
-                    ForEach(movieDataManager.cards) {card in
-                        if card.content.title.localizedCaseInsensitiveContains(searchText){
-                            ZStack(alignment: .leading) {
-                                HStack {
-                                    MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
-                                }
-                                .listStyle(PlainListStyle())
-                                NavigationLink(destination: MovieDetailView(content: card.content)) {
-                                    EmptyView()
-                                }
-                                .opacity(0.0)
-                            }
+                        .listStyle(PlainListStyle())
+                        NavigationLink(destination: MovieDetailView(content: card.content)) {
+                            EmptyView()
                         }
+                        .opacity(0.0)
                     }
                 }
             }
@@ -49,6 +32,20 @@ struct MovieView: View {
             .searchable(text: $searchText, prompt: "Search for movie")
         }.onAppear {
             self.movieDataManager.fetchData()
+        }
+    }
+    
+    var searchResults: [Card] {
+        var filteredCards = [Card]()
+        if searchText.isEmpty {
+            return movieDataManager.cards
+        } else {
+            for card in movieDataManager.cards {
+                if card.content.title.localizedCaseInsensitiveContains(searchText){
+                    filteredCards.append(card)
+                }
+            }
+            return filteredCards
         }
     }
 }
