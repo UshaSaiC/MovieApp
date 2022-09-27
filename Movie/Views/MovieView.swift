@@ -20,12 +20,22 @@ struct MovieView: View {
                         MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
                     }
                     .listStyle(PlainListStyle())
-                    .navigationBarTitle("Movies")
                     NavigationLink(destination: MovieDetailView(content: card.content)) {
                         EmptyView()
                     }
                     .opacity(0.0)
                 }
+            }
+            .navigationBarTitle("Movies", displayMode: .inline)
+            .toolbar {
+                Button {
+                    print("Search button tapped")
+                } label: {
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .scaledToFit()
+                }
+
             }
         }.onAppear {
             self.movieDataManager.fetchData()

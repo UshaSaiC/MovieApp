@@ -13,41 +13,39 @@ struct MovieImageView: View {
     var movieName: String
     
     var body: some View {
-        ZStack(alignment: .leading) {
+        ZStack{
             AsyncImage(url: URL(string: imageURL)) { image in
-                ZStack(alignment: .leading) {
-                    image.resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity, maxHeight: 300, alignment: .center)
-                    
-                        HStack {
-                                Text(movieName)
-                                .modifier(TextImageModifier())
-                                Spacer()
-                    }
-                }
-            } placeholder: {
-                ZStack {
-                    Image(systemName: "photo.on.rectangle")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: .infinity)
-                    HStack {
-                        Text(movieName)
-                            .modifier(TextImageModifier())
-                        Spacer()
-                    }
-                }
-                .padding(.horizontal, 10)
+                image
+                    .resizable()
+                    .border(Color("Border"))
+                    .frame(width: .infinity, height: UIScreen.main.bounds.height/2, alignment: .center)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 5)
+                
+            } placeholder:  {
+                Image(systemName: "photo.on.rectangle")
+                    .resizable()
+                    .frame(width: .infinity, height: UIScreen.main.bounds.height/2, alignment: .center)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 5)
+                    .border(Color("Border"))
             }
             
+            VStack {
+                Spacer()
+                HStack {
+                    Text(movieName)
+                        .modifier(TextImageModifier())
+                    
+                    Spacer()
+                }
+            }
         }
-        .border(Color("Border"))
     }
 }
 
 struct MovieImageView_Previews: PreviewProvider {
     static var previews: some View {
-        MovieImageView(imageURL: "https://en.wikipedia.org/wiki/The_Conjuring_2#/media/File:Conjuring_2.jpg", movieName: "El Camino' Cooks Up 'Breaking Bad' Easter Eggs")
+        MovieImageView(imageURL: "https://m.media-amazon.com/images/M/MV5BMjFjOGEwYjAtNDQxYy00OThhLWI3NDYtYTEyOGRlZDRhN2ViXkEyXkFqcGdeQXRyYW5zY29kZS13b3JrZmxvdw@@._V1_.jpg", movieName: "El Camino' Cooks Up 'Breaking Bad' Easter Eggs")
     }
 }
