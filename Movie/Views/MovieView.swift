@@ -41,7 +41,7 @@ struct MovieView: View {
             return movieDataManager.cards
         } else {
             for card in movieDataManager.cards {
-                if card.content.title.localizedCaseInsensitiveContains(searchText){
+                if card.content.title.localizedCaseInsensitiveContains(searchText) || card.content.description.localizedCaseInsensitiveContains(searchText){
                     filteredCards.append(card)
                 }
             }
