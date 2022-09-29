@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2402CB128E57EAC0096B74D /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2402CB028E57EAC0096B74D /* MovieViewModel.swift */; };
 		B287B30B28E1E2EF00F8C8DF /* MovieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B287B30A28E1E2EF00F8C8DF /* MovieApp.swift */; };
 		B287B30F28E1E2F100F8C8DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B287B30E28E1E2F100F8C8DF /* Assets.xcassets */; };
 		B287B31228E1E2F100F8C8DF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B287B31128E1E2F100F8C8DF /* Preview Assets.xcassets */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B2402CB028E57EAC0096B74D /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		B287B30728E1E2EF00F8C8DF /* Movie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Movie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B287B30A28E1E2EF00F8C8DF /* MovieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieApp.swift; sourceTree = "<group>"; };
 		B287B30E28E1E2F100F8C8DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -46,6 +48,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B2402CAF28E57E910096B74D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B2402CB028E57EAC0096B74D /* MovieViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B287B2FE28E1E2EF00F8C8DF = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +79,7 @@
 				B287B31E28E1E79100F8C8DF /* Data */,
 				B287B32128E1E8C400F8C8DF /* Model */,
 				B287B31828E1E30600F8C8DF /* Views */,
+				B2402CAF28E57E910096B74D /* ViewModel */,
 				B29A52A628E2A2E8009EB5D3 /* Identifier */,
 				B287B30E28E1E2F100F8C8DF /* Assets.xcassets */,
 				B287B31028E1E2F100F8C8DF /* Preview Content */,
@@ -199,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B29A52AA28E2A57B009EB5D3 /* TextImageModifier.swift in Sources */,
+				B2402CB128E57EAC0096B74D /* MovieViewModel.swift in Sources */,
 				B287B32328E1E8EA00F8C8DF /* MovieDataManager.swift in Sources */,
 				B287B32528E2020400F8C8DF /* MovieImageView.swift in Sources */,
 				B287B31B28E1E35C00F8C8DF /* MovieView.swift in Sources */,
