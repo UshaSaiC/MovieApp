@@ -9,13 +9,12 @@ import SwiftUI
 
 struct MovieView: View {
     
-    @ObservedObject var movieDataManager = MovieDataManager()
-    @State private var searchText = ""
+    @ObservedObject private var model = MovieViewModel()
     
     var body: some View {
         NavigationView{
             List {
-                ForEach(searchResults) { card in
+                ForEach(model.cards) { card in
                     ZStack(alignment: .leading) {
                         HStack {
                             MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
@@ -28,24 +27,10 @@ struct MovieView: View {
                     }
                 }
             }
-            .navigationBarTitle("Movies", displayMode: .inline)
-            .searchable(text: $searchText, prompt: "Search for movie")
+            .navigationBarTitle(model.moviesNavigationBarTitle, displayMode: .inline)
+            .searchable(text: $model.searchText, prompt: model.searchValue)
         }.onAppear {
-            self.movieDataManager.fetchData()
-        }
-    }
-    
-    var searchResults: [Card] {
-        var filteredCards = [Card]()
-        if searchText.isEmpty {
-            return movieDataManager.cards
-        } else {
-            for card in movieDataManager.cards {
-                if card.content.title.localizedCaseInsensitiveContains(searchText) || card.content.description.localizedCaseInsensitiveContains(searchText){
-                    filteredCards.append(card)
-                }
-            }
-            return filteredCards
+            model.getData()
         }
     }
 }

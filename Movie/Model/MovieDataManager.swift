@@ -7,32 +7,24 @@
 
 import Foundation
 
-class MovieDataManager: ObservableObject{
+class MovieDataManager{
     
-    @Published var cards = [Card]()
+    let url: URL
     
-    func fetchData(){
-        if let url = URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json"){
+    init(url: URL) {
+        self.url = url
+    }
+    
+    func fetchData(with completion: @escaping (Data?) -> Void){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
-                if error != nil{
-                    print(error ?? "An error occured")
-                }else{
-                    let decoder = JSONDecoder()
-                    if let safeData = data{
-                        do {
-                    let movieData = try decoder.decode(Data.self, from: safeData)
-                            DispatchQueue.main.async {
-                                self.cards = movieData.data.cards
-                            }
-                        }catch{
-                            print(error)
-                        }
-                    }
+                guard let data = data else {
+                    completion(nil)
+                    return
                 }
+                let decoder = JSONDecoder()
+                completion(try? decoder.decode(Data.self, from: data))
             }
             task.resume()
-        }
-        
     }
 }
