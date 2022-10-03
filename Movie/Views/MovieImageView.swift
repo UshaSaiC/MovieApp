@@ -18,14 +18,15 @@ struct MovieImageView: View {
                 image
                     .resizable()
                     .border(Color("Border"))
-                    .frame(width: .infinity, height: UIScreen.main.bounds.height/2, alignment: .center)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 5)
                 
             } placeholder:  {
                 Image(systemName: "photo.on.rectangle")
                     .resizable()
-                    .frame(width: .infinity, height: UIScreen.main.bounds.height/2, alignment: .center)
+                    .frame(height: UIScreen.main.bounds.height/2, alignment: .center)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 5)
                     .border(Color("Border"))
@@ -36,8 +37,6 @@ struct MovieImageView: View {
                 HStack {
                     Text(movieName)
                         .modifier(TextImageModifier())
-                    
-                    Spacer()
                 }
             }
         }

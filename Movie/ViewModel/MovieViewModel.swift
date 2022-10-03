@@ -24,16 +24,6 @@ class MovieViewModel: ObservableObject{
     
     let url = URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json")
     
-//    func getData(_ completion: @escaping ([Card]?) -> Void) {
-//        let movieDataManager = MovieDataManager(url: url!)
-//        movieDataManager.fetchData { data in
-//            DispatchQueue.main.async {
-//                self.rowCards = data!.data.cards
-//                completion(self.rowCards)
-//            }
-//        }
-//    }
-    
     func getData(){
         let movieDataManager = MovieDataManager(url: url!)
         movieDataManager.fetchData { data in

@@ -10,11 +10,12 @@ import SwiftUI
 struct TextImageModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.title3)
+            .font(.headline)
             .foregroundColor(Color("Text"))
             .background(Color("Background"))
-            .padding(.horizontal, 8)
+//            .padding(.horizontal, 8)
             .padding(.vertical, 15)
-            .cornerRadius(10)
+//            .cornerRadius(10)
+            .frame(alignment: .center)
     }
 }
