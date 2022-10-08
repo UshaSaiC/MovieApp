@@ -178,8 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				B20CDB2328F1D0F5006725EB /* MockService.swift */,
-				B2B3CC6228EE848500A654DD /* MovieViewModelTests.swift */,
 				B20CDB1628F13ACC006725EB /* MockMovieData.swift */,
+				B2B3CC6228EE848500A654DD /* MovieViewModelTests.swift */,
 				B20CDB1828F14949006725EB /* MovieDataTests.swift */,
 			);
 			path = MovieTests;
