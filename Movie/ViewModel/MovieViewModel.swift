@@ -22,14 +22,18 @@ class MovieViewModel: ObservableObject{
     var moviesNavigationBarTitle = "Movies"
     var searchValue = "Search for movie"
     
-    let url = URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json")
+    let service: ServiceProtocol
+    init(service: ServiceProtocol = MovieDataManager(url: URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json")!)) {
+        self.service = service
+    }
     
     func getData(){
-        let movieDataManager = MovieDataManager(url: url!)
-        movieDataManager.fetchData { data in
-            DispatchQueue.main.async {
-                self.rowCards = data!.data.cards
-                self.cards = self.rowCards ?? []
+        service.fetchData { data in
+            if data != nil {
+                DispatchQueue.main.async {
+                    self.rowCards = data!.data.cards
+                    self.cards = self.rowCards ?? []
+                }
             }
         }
     }

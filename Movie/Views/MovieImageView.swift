@@ -26,10 +26,11 @@ struct MovieImageView: View {
             } placeholder:  {
                 Image(systemName: "photo.on.rectangle")
                     .resizable()
-                    .frame(height: UIScreen.main.bounds.height/2, alignment: .center)
+                    .border(Color("Border"))
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 5)
-                    .border(Color("Border"))
             }
             
             VStack {

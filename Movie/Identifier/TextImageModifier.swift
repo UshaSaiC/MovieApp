@@ -13,9 +13,7 @@ struct TextImageModifier: ViewModifier {
             .font(.headline)
             .foregroundColor(Color("Text"))
             .background(Color("Background"))
-//            .padding(.horizontal, 8)
             .padding(.vertical, 15)
-//            .cornerRadius(10)
             .frame(alignment: .center)
     }
 }
