@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieDataManager{
+class MovieDataManager: ServiceProtocol{
     
     let url: URL
     
@@ -15,7 +15,7 @@ class MovieDataManager{
         self.url = url
     }
     
-    func fetchData(with completion: @escaping (Data?) -> Void){
+    func fetchData(with completion: @escaping (MovieData?) -> Void){
             let session = URLSession(configuration: .default)
             let task = session.dataTask(with: url) { data, response, error in
                 guard let data = data else {
@@ -23,7 +23,7 @@ class MovieDataManager{
                     return
                 }
                 let decoder = JSONDecoder()
-                completion(try? decoder.decode(Data.self, from: data))
+                completion(try? decoder.decode(MovieData.self, from: data))
             }
             task.resume()
     }

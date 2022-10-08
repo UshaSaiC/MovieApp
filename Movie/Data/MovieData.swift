@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Data: Codable {
+struct MovieData: Codable {
     let data: Cards
 }
 
