@@ -14,23 +14,25 @@ struct MovieImageView: View {
     
     var body: some View {
         ZStack{
-            AsyncImage(url: URL(string: imageURL)) { image in
-                image
-                    .resizable()
-                    .border(Color("Border"))
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 5)
-                
-            } placeholder:  {
-                Image(systemName: "photo.on.rectangle")
-                    .resizable()
-                    .border(Color("Border"))
-                    .aspectRatio(contentMode: .fit)
-                    .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 5)
+            if let safeURL = URL(string: imageURL) {
+                AsyncImage(url: safeURL) { image in
+                    image
+                        .resizable()
+                        .border(Color("Border"))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 5)
+                    
+                } placeholder:  {
+                    Image(systemName: "photo.on.rectangle")
+                        .resizable()
+                        .border(Color("Border"))
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
+                        .padding(.horizontal, 5)
+                        .padding(.vertical, 5)
+                }
             }
             
             VStack {
