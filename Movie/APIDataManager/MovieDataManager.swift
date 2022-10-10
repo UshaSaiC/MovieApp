@@ -20,12 +20,18 @@ class MovieDataManager: ServiceProtocol{
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: url) { data, response, error in
-            guard let data = data else {
+            if error != nil {
+                print("URLSession Error: \(String(describing: error?.localizedDescription))")
                 completion(nil)
-                return
             }
-            let decoder = JSONDecoder()
-            completion(try? decoder.decode(MovieData.self, from: data))
+            else {
+                guard let data = data else {
+                    completion(nil)
+                    return
+                }
+                let decoder = JSONDecoder()
+                completion(try? decoder.decode(MovieData.self, from: data))
+            }
         }
         task.resume()
     }
