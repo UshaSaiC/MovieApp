@@ -12,25 +12,29 @@ struct MovieView: View {
     @ObservedObject private var model = MovieViewModel()
     
     var body: some View {
-        NavigationView{
-            List {
-                ForEach(model.cards) { card in 
-                    ZStack(alignment: .leading) {
-                        HStack {
-                            MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
+        if model.isConnected{
+            NavigationView{
+                List {
+                    ForEach(model.cards) { card in
+                        ZStack(alignment: .leading) {
+                            HStack {
+                                MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
+                            }
+                            .listStyle(PlainListStyle())
+                            NavigationLink(destination: MovieDetailView(content: card.content)) {
+                                EmptyView()
+                            }
+                            .opacity(0.0)
                         }
-                        .listStyle(PlainListStyle())
-                        NavigationLink(destination: MovieDetailView(content: card.content)) {
-                            EmptyView()
-                        }
-                        .opacity(0.0)
                     }
                 }
+                .navigationBarTitle(model.moviesNavigationBarTitle, displayMode: .inline)
+                .searchable(text: $model.searchText, prompt: model.searchValue)
+            }.onAppear {
+                model.getData()
             }
-            .navigationBarTitle(model.moviesNavigationBarTitle, displayMode: .inline)
-            .searchable(text: $model.searchText, prompt: model.searchValue)
-        }.onAppear {
-            model.getData()
+        } else {
+            Text(model.connectionDescription)
         }
     }
 }
