@@ -14,7 +14,7 @@ struct MovieView: View {
     var body: some View {
         NavigationView{
             List {
-                ForEach(model.cards) { card in
+                ForEach(model.cards) { card in 
                     ZStack(alignment: .leading) {
                         HStack {
                             MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)

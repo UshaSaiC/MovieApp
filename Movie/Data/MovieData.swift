@@ -16,7 +16,7 @@ struct Cards: Codable {
 }
 
 struct Card: Codable, Identifiable {
-    let id = UUID()
+    let id: String
     let content: ContentData
 }
 
@@ -25,6 +25,13 @@ struct ContentData: Codable {
     let description: String
     let movieLogo: String
     let rating: Float
+}
+
+extension Card {
+    enum CodingKeys: String, CodingKey {
+        case content
+        case id = "card_id"
+    }
 }
 
 extension ContentData {

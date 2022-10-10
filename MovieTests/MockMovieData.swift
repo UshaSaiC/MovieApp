@@ -20,8 +20,10 @@ extension Cards{
 }
 
 extension Card{
-    static func with(content: ContentData = ContentData.with()) -> Card {
+    static func with(id: String = "1",
+                     content: ContentData = ContentData.with()) -> Card {
         return Card(
+            id: id,
             content: content
         )
     }
