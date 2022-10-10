@@ -16,15 +16,17 @@ class MovieDataManager: ServiceProtocol{
     }
     
     func fetchData(with completion: @escaping (MovieData?) -> Void){
-            let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { data, response, error in
-                guard let data = data else {
-                    completion(nil)
-                    return
-                }
-                let decoder = JSONDecoder()
-                completion(try? decoder.decode(MovieData.self, from: data))
+        let config = URLSessionConfiguration.ephemeral
+        config.waitsForConnectivity = true
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                completion(nil)
+                return
             }
-            task.resume()
+            let decoder = JSONDecoder()
+            completion(try? decoder.decode(MovieData.self, from: data))
+        }
+        task.resume()
     }
 }

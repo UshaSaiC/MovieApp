@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Network
 
 class MovieViewModel: ObservableObject{
     
@@ -19,12 +20,23 @@ class MovieViewModel: ObservableObject{
         }
     }
     
+    let monitor = NWPathMonitor()
+    let queue = DispatchQueue(label: "MovieDataManager")
+    @Published var isConnected = true
+    
     var moviesNavigationBarTitle = "Movies"
     var searchValue = "Search for movie"
     
     let service: ServiceProtocol
     init(service: ServiceProtocol = MovieDataManager(url: URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json")!)) {
         self.service = service
+        monitor.pathUpdateHandler = { path in
+            DispatchQueue.main.async {
+                self.isConnected = path.status == .satisfied
+            }
+        }
+        
+        monitor.start(queue: queue)
     }
     
     func getData(){
