@@ -39,6 +39,14 @@ class MovieViewModel: ObservableObject{
         monitor.start(queue: queue)
     }
     
+    var connectionDescription: String {
+        if isConnected {
+            return ""
+        } else {
+            return "It looks like you're not connected to the internet. Make sure WiFi is enabled and try again"
+        }
+    }
+    
     func getData(){
         service.fetchData { data in
             if data != nil {
