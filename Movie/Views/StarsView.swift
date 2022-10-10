@@ -11,11 +11,12 @@ struct StarsView: View {
     
     var rating: Float
     var maxRating: Int = 5
+    @ObservedObject private var model = StarsViewModel()
     
     var body: some View {
         let stars = HStack(spacing: 0) {
-             ForEach(0..<maxRating, id: \.self) { _ in
-                 Image(systemName: "star.fill")
+            ForEach(0..<maxRating, id: \.self) { _ in
+                 Image(systemName: model.imageName)
                      .resizable()
                      .aspectRatio(contentMode: .fit)
              }

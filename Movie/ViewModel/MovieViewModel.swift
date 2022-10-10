@@ -8,7 +8,7 @@
 import SwiftUI
 import Network
 
-class MovieViewModel: ObservableObject{
+class MovieViewModel: ObservableObject {
     
     @Published var cards = [Card]()
     
@@ -51,8 +51,9 @@ class MovieViewModel: ObservableObject{
         service.fetchData { data in
             if data != nil {
                 DispatchQueue.main.async {
-                    self.rowCards = data!.data.cards
-                    self.cards = self.rowCards ?? []
+                    guard let safeData = data else { return }
+                        self.rowCards = safeData.data.cards
+                        self.cards = self.rowCards ?? []
                 }
             }
         }
