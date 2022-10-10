@@ -81,7 +81,7 @@ class MovieDataTests: XCTestCase{
         let card = try! JSONDecoder().decode(Card.self, from: json)
         
         XCTAssertNotNil(card)
-        XCTAssertNotNil(card.id)
+        XCTAssertEqual(card.id, Card.with().id)
         let cardContent = card.content
         XCTAssertEqual(cardContent.title, ContentData.with().title)
         XCTAssertEqual(cardContent.description, ContentData.with().description)
