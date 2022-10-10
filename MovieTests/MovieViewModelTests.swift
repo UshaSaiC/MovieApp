@@ -16,7 +16,7 @@ class MovieViewModelTests: XCTestCase{
         let viewModel = MovieViewModel(service: service)
         
         viewModel.getData()
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestSuccessDataOfMovie")
         DispatchQueue.main.async {
             expectation.fulfill()
         }
@@ -36,7 +36,7 @@ class MovieViewModelTests: XCTestCase{
         
         viewModel.getData()
         
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestEmptyDataOfMovie")
         DispatchQueue.main.async {
             expectation.fulfill()
         }
@@ -52,7 +52,7 @@ class MovieViewModelTests: XCTestCase{
         
         viewModel.getData()
         
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestNilDataOfMovie")
         DispatchQueue.main.async {
             expectation.fulfill()
         }
@@ -68,7 +68,7 @@ class MovieViewModelTests: XCTestCase{
         
         viewModel.searchText = ""
         viewModel.getData()
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestSearchTextWhenEmpty")
         DispatchQueue.main.async {
             expectation.fulfill()
         }
@@ -90,7 +90,7 @@ class MovieViewModelTests: XCTestCase{
         
         viewModel.searchText = "invalid"
         viewModel.getData()
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestSearchTextIsNotAMatch")
         DispatchQueue.main.async {
             expectation.fulfill()
         }
@@ -108,7 +108,7 @@ class MovieViewModelTests: XCTestCase{
         
         viewModel.searchText = "title"
         viewModel.getData()
-        let expectation = self.expectation(description: "Test")
+        let expectation = self.expectation(description: "TestSearchTextIsAMatch")
         DispatchQueue.main.async {
             expectation.fulfill()
         }

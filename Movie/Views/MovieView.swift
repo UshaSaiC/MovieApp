@@ -12,8 +12,8 @@ struct MovieView: View {
     @ObservedObject private var model = MovieViewModel()
     
     var body: some View {
-        if model.isConnected{
-            NavigationView{
+        if model.isConnected {
+            NavigationView {
                 List {
                     ForEach(model.cards) { card in
                         ZStack(alignment: .leading) {

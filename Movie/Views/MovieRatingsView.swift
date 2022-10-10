@@ -8,13 +8,15 @@
 import SwiftUI
 
 struct MovieRatingsView: View {
+    
+    @ObservedObject private var model = MovieRatingsViewModel()
     let rating: Float
     
     var body: some View {
-        GroupBox(){
+        GroupBox() {
                 HStack {
                     Group {
-                        Text("Ratings : ")
+                        Text(model.ratingsLabel)
                         Spacer()
                         StarsView(rating: rating)
                 }

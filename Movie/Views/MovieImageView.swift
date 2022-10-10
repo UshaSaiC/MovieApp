@@ -24,7 +24,7 @@ struct MovieImageView: View {
                         .padding(.horizontal, 5)
                         .padding(.vertical, 5)
                     
-                } placeholder:  {
+                } placeholder: {
                     Image(systemName: "photo.on.rectangle")
                         .resizable()
                         .border(Color("Border"))

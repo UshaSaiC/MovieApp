@@ -15,7 +15,7 @@ class MovieDataManager: ServiceProtocol{
         self.url = url
     }
     
-    func fetchData(with completion: @escaping (MovieData?) -> Void){
+    func fetchData(with completion: @escaping (MovieData?) -> Void) {
         let config = URLSessionConfiguration.ephemeral
         config.waitsForConnectivity = true
         let session = URLSession(configuration: config)
