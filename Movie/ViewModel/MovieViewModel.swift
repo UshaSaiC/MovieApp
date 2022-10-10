@@ -23,6 +23,7 @@ class MovieViewModel: ObservableObject {
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "MovieDataManager")
     @Published var isConnected = true
+    @Published var sessionError = false
     
     var moviesNavigationBarTitle = "Movies"
     var searchValue = "Search for movie"
@@ -47,6 +48,14 @@ class MovieViewModel: ObservableObject {
         }
     }
     
+    var sessionErrorDescription: String {
+        if sessionError {
+            return "Unable to retrieve the required data at the moment. Try later"
+        } else {
+            return ""
+        }
+    }
+    
     func getData(){
         service.fetchData { data in
             if data != nil {
@@ -54,6 +63,10 @@ class MovieViewModel: ObservableObject {
                     guard let safeData = data else { return }
                         self.rowCards = safeData.data.cards
                         self.cards = self.rowCards ?? []
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self.sessionError = true
                 }
             }
         }
