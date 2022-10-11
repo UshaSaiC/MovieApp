@@ -1,0 +1,15 @@
+{
+  "data": {
+    "cards": [
+      {
+        "card_id": "1",
+        "content": {
+          "title": "movie title",
+          "description": "description of movie",
+          "movie_logo": "image of movie logo",
+          "rating": 6.798
+        }
+      }
+    ]
+  }
+}

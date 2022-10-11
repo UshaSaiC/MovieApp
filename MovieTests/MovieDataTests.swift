@@ -20,7 +20,7 @@ class MovieDataTests: XCTestCase{
             "title": "movie title",
             "description": "description of movie",
             "movie_logo": "image of movie logo",
-            "rating": 6.798,
+            "rating": 6.798
           }
         }
       ]
@@ -48,7 +48,7 @@ class MovieDataTests: XCTestCase{
             "title": "movie title",
             "description": "description of movie",
             "movie_logo": "image of movie logo",
-            "rating": 6.798,
+            "rating": 6.798
           }
         }
       ]
@@ -73,7 +73,7 @@ class MovieDataTests: XCTestCase{
             "title": "movie title",
             "description": "description of movie",
             "movie_logo": "image of movie logo",
-            "rating": 6.798,
+            "rating": 6.798
           }
         }
   """.data(using: .utf8)!
@@ -95,7 +95,7 @@ class MovieDataTests: XCTestCase{
             "title": "movie title",
             "description": "description of movie",
             "movie_logo": "image of movie logo",
-            "rating": 6.798,
+            "rating": 6.798
           }
   """.data(using: .utf8)!
         
