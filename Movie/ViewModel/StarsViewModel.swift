@@ -8,10 +8,19 @@
 import SwiftUI
 
 class StarsViewModel: ObservableObject {
+    
     var imageName = "star.fill"
     var maxRating: Int = 5
     
     func width(rating: Double, screenWidth: Double) -> CGFloat? {
-        return CGFloat(rating/2.0) / CGFloat(maxRating) * CGFloat(screenWidth)
+        var validRating: Double
+        if rating < 0 {
+            validRating = 0
+        } else if rating > 10 {
+            validRating = 10
+        } else {
+            validRating = rating
+        }
+        return CGFloat(validRating/2.0) / CGFloat(maxRating) * CGFloat(screenWidth)
     }
 }
