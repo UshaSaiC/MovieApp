@@ -28,7 +28,7 @@ class URLSessionTests: XCTestCase {
     
     func testNilDataWhenInvalidDataBeingReturnedByAPI() {
         mockSession = createMockSession(fromJsonFile: "A", andError: nil)
-        sut = MovieDataManager(url: URL(string: base_url + interview_endpoint)!)
+        sut = MovieDataManager(url: URL(string: baseUrl + interviewEndpoint)!)
         sut.session = mockSession
         
         sut.fetchData(with: { data in
@@ -38,7 +38,7 @@ class URLSessionTests: XCTestCase {
     
     func testSuccessDataWhenValidDataBeingReturnedByAPI() {
         mockSession = createMockSession(fromJsonFile: "MovieData", andError: nil)
-        sut = MovieDataManager(url: URL(string: base_url + interview_endpoint)!)
+        sut = MovieDataManager(url: URL(string: baseUrl + interviewEndpoint)!)
         sut.session = mockSession
         
         sut.fetchData(with: { data in

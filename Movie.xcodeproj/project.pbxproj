@@ -50,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2013BBF28F5FAFD009156FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B2013BC128F5FBA6009156FA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B20CDB1628F13ACC006725EB /* MockMovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieData.swift; sourceTree = "<group>"; };
 		B20CDB1828F14949006725EB /* MovieDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataTests.swift; sourceTree = "<group>"; };
 		B20CDB2328F1D0F5006725EB /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
@@ -119,6 +121,8 @@
 		B287B2FE28E1E2EF00F8C8DF = {
 			isa = PBXGroup;
 			children = (
+				B2013BC128F5FBA6009156FA /* Package.swift */,
+				B2013BBF28F5FAFD009156FA /* .gitignore */,
 				B287B30928E1E2EF00F8C8DF /* Movie */,
 				B2B3CC5A28EE82DA00A654DD /* MovieTests */,
 				B287B30828E1E2EF00F8C8DF /* Products */,
@@ -230,6 +234,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B2013BC328F5FD3A009156FA /* PBXTargetDependency */,
 			);
 			name = Movie;
 			productName = Movie;
@@ -247,6 +252,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B25CD54028F5FDEF00AB233C /* PBXTargetDependency */,
 				B2B3CC5E28EE82DA00A654DD /* PBXTargetDependency */,
 			);
 			name = MovieTests;
@@ -282,6 +288,9 @@
 				Base,
 			);
 			mainGroup = B287B2FE28E1E2EF00F8C8DF;
+			packageReferences = (
+				B2013BC028F5FB58009156FA /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */,
+			);
 			productRefGroup = B287B30828E1E2EF00F8C8DF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -357,6 +366,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B2013BC328F5FD3A009156FA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B2013BC228F5FD3A009156FA /* SwiftLint */;
+		};
+		B25CD54028F5FDEF00AB233C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B25CD53F28F5FDEF00AB233C /* SwiftLint */;
+		};
 		B2B3CC5E28EE82DA00A654DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B287B30628E1E2EF00F8C8DF /* Movie */;
@@ -600,6 +617,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B2013BC028F5FB58009156FA /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lukepistrol/SwiftLintPlugin.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B2013BC228F5FD3A009156FA /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2013BC028F5FB58009156FA /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
+		};
+		B25CD53F28F5FDEF00AB233C /* SwiftLint */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B2013BC028F5FB58009156FA /* XCRemoteSwiftPackageReference "SwiftLintPlugin" */;
+			productName = "plugin:SwiftLint";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B287B2FF28E1E2EF00F8C8DF /* Project object */;
 }

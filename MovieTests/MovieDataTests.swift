@@ -28,10 +28,10 @@ class MovieDataTests: XCTestCase{
   }
   """.data(using: .utf8)!
         
-        let movie = try! JSONDecoder().decode(MovieData.self, from: json)
+        let movie = try? JSONDecoder().decode(MovieData.self, from: json)
         
         XCTAssertNotNil(movie)
-        let movieContent = movie.data.cards.first?.content
+        let movieContent = movie?.data.cards.first?.content
         XCTAssertEqual(movieContent?.title, ContentData.with().title)
         XCTAssertEqual(movieContent?.description, ContentData.with().description)
         XCTAssertEqual(movieContent?.movieLogo, ContentData.with().movieLogo)
@@ -55,10 +55,10 @@ class MovieDataTests: XCTestCase{
   }
   """.data(using: .utf8)!
         
-        let cards = try! JSONDecoder().decode(Cards.self, from: json)
+        let cards = try? JSONDecoder().decode(Cards.self, from: json)
         
         XCTAssertNotNil(cards)
-        let cardsContent = cards.cards.first?.content
+        let cardsContent = cards?.cards.first?.content
         XCTAssertEqual(cardsContent?.title, ContentData.with().title)
         XCTAssertEqual(cardsContent?.description, ContentData.with().description)
         XCTAssertEqual(cardsContent?.movieLogo, ContentData.with().movieLogo)
@@ -78,15 +78,15 @@ class MovieDataTests: XCTestCase{
         }
   """.data(using: .utf8)!
         
-        let card = try! JSONDecoder().decode(Card.self, from: json)
+        let card = try? JSONDecoder().decode(Card.self, from: json)
         
         XCTAssertNotNil(card)
-        XCTAssertEqual(card.id, Card.with().id)
-        let cardContent = card.content
-        XCTAssertEqual(cardContent.title, ContentData.with().title)
-        XCTAssertEqual(cardContent.description, ContentData.with().description)
-        XCTAssertEqual(cardContent.movieLogo, ContentData.with().movieLogo)
-        XCTAssertEqual(cardContent.rating, ContentData.with().rating)
+        XCTAssertEqual(card?.id, Card.with().id)
+        let cardContent = card?.content
+        XCTAssertEqual(cardContent?.title, ContentData.with().title)
+        XCTAssertEqual(cardContent?.description, ContentData.with().description)
+        XCTAssertEqual(cardContent?.movieLogo, ContentData.with().movieLogo)
+        XCTAssertEqual(cardContent?.rating, ContentData.with().rating)
     }
     
     func testSuccessParserForContentData() {
@@ -99,13 +99,13 @@ class MovieDataTests: XCTestCase{
           }
   """.data(using: .utf8)!
         
-        let content = try! JSONDecoder().decode(ContentData.self, from: json)
+        let content = try? JSONDecoder().decode(ContentData.self, from: json)
         
         XCTAssertNotNil(content)
-        XCTAssertEqual(content.title, ContentData.with().title)
-        XCTAssertEqual(content.description, ContentData.with().description)
-        XCTAssertEqual(content.movieLogo, ContentData.with().movieLogo)
-        XCTAssertEqual(content.rating, ContentData.with().rating)
+        XCTAssertEqual(content?.title, ContentData.with().title)
+        XCTAssertEqual(content?.description, ContentData.with().description)
+        XCTAssertEqual(content?.movieLogo, ContentData.with().movieLogo)
+        XCTAssertEqual(content?.rating, ContentData.with().rating)
     }
     
 }

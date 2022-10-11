@@ -29,7 +29,7 @@ class MovieViewModel: ObservableObject {
     var searchValue = "Search for movie"
     
     let service: ServiceProtocol
-    init(service: ServiceProtocol = MovieDataManager(url: URL(string: base_url + interview_endpoint)!)) {
+    init(service: ServiceProtocol = MovieDataManager(url: URL(string: baseUrl + interviewEndpoint)!)) {
         self.service = service
         monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {
