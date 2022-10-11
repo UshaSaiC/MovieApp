@@ -3,4 +3,150 @@
    uuid = "4C8731CA-71FB-40EF-85A9-D8383568D189"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AE4AF447-21EA-46D2-AFAA-3154F2C4B11F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movie/APIService/MovieDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchData(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AE4AF447-21EA-46D2-AFAA-3154F2C4B11F - e339b1dcc4625139"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Movie.MovieDataManager.fetchData(with: (Swift.Optional&lt;Movie.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1237">
+               </Location>
+               <Location
+                  uuid = "AE4AF447-21EA-46D2-AFAA-3154F2C4B11F - cbb824998be12f7d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieTests.MovieDataManager.fetchData(with: (Swift.Optional&lt;MovieTests.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "1237">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CABBB501-D296-4EE3-A54F-1176E7263AA1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movie/APIService/MovieDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "fetchData(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CABBB501-D296-4EE3-A54F-1176E7263AA1 - e339b1dcc46252d8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Movie.MovieDataManager.fetchData(with: (Swift.Optional&lt;Movie.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1265">
+               </Location>
+               <Location
+                  uuid = "CABBB501-D296-4EE3-A54F-1176E7263AA1 - cbb824998be12c9c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieTests.MovieDataManager.fetchData(with: (Swift.Optional&lt;MovieTests.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1265">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7E4D4B06-7435-4265-8781-52E1659A9622"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Movie/APIService/MovieDataManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchData(with:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "7E4D4B06-7435-4265-8781-52E1659A9622 - e339b1dcc4625116"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Movie.MovieDataManager.fetchData(with: (Swift.Optional&lt;Movie.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Movie"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+               <Location
+                  uuid = "7E4D4B06-7435-4265-8781-52E1659A9622 - cbb824998be12f52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in MovieTests.MovieDataManager.fetchData(with: (Swift.Optional&lt;MovieTests.MovieData&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "MovieTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ushasaichintha/Downloads/Movie/Movie/APIService/MovieDataManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "1160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

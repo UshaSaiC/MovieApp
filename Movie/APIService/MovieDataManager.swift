@@ -10,15 +10,16 @@ import Foundation
 class MovieDataManager: ServiceProtocol{
     
     let url: URL
+    var session: URLSessionProtocol
     
     init(url: URL) {
         self.url = url
+        let config = URLSessionConfiguration.ephemeral
+        config.waitsForConnectivity = true
+        session = URLSession(configuration: config)
     }
     
     func fetchData(with completion: @escaping (MovieData?) -> Void) {
-        let config = URLSessionConfiguration.ephemeral
-        config.waitsForConnectivity = true
-        let session = URLSession(configuration: config)
         let task = session.dataTask(with: url) { data, response, error in
             if error != nil {
                 print("URLSession Error: \(String(describing: error?.localizedDescription))")
