@@ -23,10 +23,10 @@ struct StarsView: View {
          }
 
          stars.overlay(
-             GeometryReader { g in
+             GeometryReader { geometryReader in
                  ZStack(alignment: .leading) {
                      Rectangle()
-                         .frame(width: model.width(rating: rating, screenWidth: g.size.width))
+                         .frame(width: model.width(rating: rating, screenWidth: geometryReader.size.width))
                          .foregroundColor(.yellow)
                  }
              }

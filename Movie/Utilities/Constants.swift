@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-let base_url = "https://tw-mobile-hiring.web.app/"
-let interview_endpoint = "interview_ios.json"
+let baseUrl = "https://tw-mobile-hiring.web.app/"
+let interviewEndpoint = "interview_ios.json"
 
 struct AssetColors {
     static let textColor = Color(red: 207.0/255.0, green: 44.0/255.0, blue: 29.0/255.0, opacity: 1.0)
