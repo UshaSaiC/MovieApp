@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieRatingsView: View {
     
     @ObservedObject private var model = MovieRatingsViewModel()
-    let rating: Float
+    let rating: Double
     
     var body: some View {
         GroupBox() {
