@@ -33,7 +33,7 @@ extension ContentData {
     static func with(title: String = "movie title",
                      description: String = "description of movie",
                      movieLogo: String = "image of movie logo",
-                     rating: Float = 6.798) -> ContentData {
+                     rating: Double = 6.798) -> ContentData {
         return ContentData(
             title: title,
             description: description,

@@ -24,7 +24,7 @@ struct ContentData: Codable {
     let title: String
     let description: String
     let movieLogo: String
-    let rating: Float
+    let rating: Double
 }
 
 extension Card {
