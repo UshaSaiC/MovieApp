@@ -23,4 +23,3 @@ extension URLSession: URLSessionProtocol {
         return (dataTask(with: url, completionHandler: completionHandler) as URLSessionDataTask) as URLSessionDataTaskProtocol
     }
 }
-

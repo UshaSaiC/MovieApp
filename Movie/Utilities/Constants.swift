@@ -14,17 +14,21 @@ let interviewEndpoint = "interview_ios.json"
 struct AssetColors {
     static let textColor = Color(red: 207.0/255.0, green: 44.0/255.0, blue: 29.0/255.0, opacity: 1.0)
     
-    static var borderColor: UIColor {
-            return UIColor { (traits) -> UIColor in
-                return traits.userInterfaceStyle == .dark ? .white : .black
-            }
+    static private var deviceTheme: UIUserInterfaceStyle {
+        return UIScreen.main.traitCollection.userInterfaceStyle
     }
     
-    static var backgroundColor: UIColor {
-            return UIColor { (traits) -> UIColor in
-                return traits.userInterfaceStyle == .dark ?
-                UIColor(red: 241.0/255.0, green: 217.0/255.0, blue: 116.0/255.0, alpha: 1) :
-                UIColor(red: 214.0/255.0, green: 182.0/255.0, blue: 98.0/255.0, alpha: 1)
-            }
+    static var borderColor: Color {
+        if deviceTheme == .dark {
+            return .white
+        }
+        return .black
+    }
+    
+    static var backgroundColor: Color {
+        if deviceTheme == .dark {
+            return Color(red: 241.0/255.0, green: 217.0/255.0, blue: 116.0/255.0, opacity: 1)
+        }
+        return Color(red: 214.0/255.0, green: 182.0/255.0, blue: 98.0/255.0, opacity: 1)
     }
 }

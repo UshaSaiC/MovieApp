@@ -12,4 +12,3 @@ class MovieRatingsViewModel: ObservableObject {
     var ratingsLabel = "Ratings : "
     
 }
-

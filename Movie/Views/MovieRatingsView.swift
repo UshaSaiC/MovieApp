@@ -13,7 +13,7 @@ struct MovieRatingsView: View {
     let rating: Double
     
     var body: some View {
-        GroupBox() {
+        GroupBox {
                 HStack {
                     Group {
                         Text(model.ratingsLabel)

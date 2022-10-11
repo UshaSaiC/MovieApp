@@ -10,7 +10,6 @@ import SwiftUI
 struct StarsView: View {
     
     var rating: Double
-    var maxRating: Int = 5
     @ObservedObject private var model = StarsViewModel()
     
     var body: some View {
