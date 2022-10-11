@@ -29,7 +29,7 @@ class MovieViewModel: ObservableObject {
     var searchValue = "Search for movie"
     
     let service: ServiceProtocol
-    init(service: ServiceProtocol = MovieDataManager(url: URL(string: "https://tw-mobile-hiring.web.app/interview_ios.json")!)) {
+    init(service: ServiceProtocol = MovieDataManager(url: URL(string: base_url + interview_endpoint)!)) {
         self.service = service
         monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {
@@ -58,16 +58,16 @@ class MovieViewModel: ObservableObject {
     
     func getData(){
         service.fetchData { data in
-            if data != nil {
-                DispatchQueue.main.async {
-                    guard let safeData = data else { return }
-                        self.rowCards = safeData.data.cards
-                        self.cards = self.rowCards ?? []
-                }
-            } else {
+            guard let data = data else {
                 DispatchQueue.main.async {
                     self.sessionError = true
                 }
+                return
+                
+            }
+            DispatchQueue.main.async {
+                self.rowCards = data.data.cards
+                self.cards = self.rowCards ?? []
             }
         }
     }

@@ -18,7 +18,7 @@ struct MovieImageView: View {
                 AsyncImage(url: safeURL) { image in
                     image
                         .resizable()
-                        .border(Color("Border"))
+                        .border(Color(AssetColors.borderColor))
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                         .padding(.horizontal, 5)
@@ -27,7 +27,7 @@ struct MovieImageView: View {
                 } placeholder: {
                     Image(systemName: "photo.on.rectangle")
                         .resizable()
-                        .border(Color("Border"))
+                        .border(Color(AssetColors.borderColor))
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                         .padding(.horizontal, 5)
