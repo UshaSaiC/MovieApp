@@ -118,5 +118,33 @@ class MovieViewModelTests: XCTestCase{
         XCTAssertEqual(viewModel.cards.count, 1)
         XCTAssertEqual(viewModel.cards.first?.content.title, "movie title")
     }
+    
+    func testConnectionMessageWhenNetAvailable() {
+        let viewModel = MovieViewModel()
+        viewModel.isConnected = true
+
+        XCTAssertTrue(viewModel.connectionDescription.isEmpty)
+    }
+    
+    func testConnectionMessageWhenNetUnAvailable() {
+        let viewModel = MovieViewModel()
+        viewModel.isConnected = false
+
+        XCTAssertEqual(viewModel.connectionDescription, "It looks like you're not connected to the internet. Make sure WiFi is enabled and try again")
+    }
+    
+    func testSessionErrorMessageWhenDataIsRetrieved() {
+        let viewModel = MovieViewModel()
+        viewModel.sessionError = false
+                                       
+        XCTAssertTrue(viewModel.sessionErrorDescription.isEmpty)
+    }
+    
+    func testSessionErrorMessageWhenDataNotRetrieved() {
+        let viewModel = MovieViewModel()
+        viewModel.sessionError = true
+        
+        XCTAssertEqual(viewModel.sessionErrorDescription, "Unable to retrieve the required data at the moment. Try later")
+    }
 }
 
