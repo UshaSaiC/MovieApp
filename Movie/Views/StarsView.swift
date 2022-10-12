@@ -10,7 +10,12 @@ import SwiftUI
 struct StarsView: View {
     
     var rating: Double
-    @ObservedObject private var model = StarsViewModel()
+    @ObservedObject private var model: StarsViewModel
+    
+    init(rating: Double, model: StarsViewModel? = nil) {
+        self.rating = rating
+        self.model = model ?? StarsViewModel(rating: rating)
+    }
     
     var body: some View {
         let stars = HStack(spacing: 0) {
@@ -25,7 +30,7 @@ struct StarsView: View {
              GeometryReader { geometryReader in
                  ZStack(alignment: .leading) {
                      Rectangle()
-                         .frame(width: model.width(rating: rating, screenWidth: geometryReader.size.width))
+                         .frame(width: model.width(screenWidth: geometryReader.size.width))
                          .foregroundColor(.yellow)
                  }
              }

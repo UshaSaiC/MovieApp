@@ -12,7 +12,13 @@ class StarsViewModel: ObservableObject {
     var imageName = "star.fill"
     var maxRating: Int = 5
     
-    func width(rating: Double, screenWidth: Double) -> CGFloat? {
+    let rating: Double
+    
+    init(rating: Double) {
+        self.rating = rating
+    }
+    
+    func width(screenWidth: Double) -> CGFloat? {
         var validRating: Double
         if rating < 0 {
             validRating = 0
