@@ -7,7 +7,7 @@
 
 import XCTest
 
-class MovieViewModelTests: XCTestCase{
+class MovieViewModelTests: XCTestCase {
     
     func testSuccessFetchData() {
         let expectedResult = MovieData.with()
@@ -147,4 +147,3 @@ class MovieViewModelTests: XCTestCase{
         XCTAssertEqual(viewModel.sessionErrorDescription, "Unable to retrieve the required data at the moment. Try later")
     }
 }
-

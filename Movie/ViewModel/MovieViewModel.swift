@@ -15,7 +15,7 @@ class MovieViewModel: ObservableObject {
     var rowCards: [Card]?
     
     @Published var searchText: String = "" {
-        didSet{
+        didSet {
             searchResults()
         }
     }
@@ -56,7 +56,7 @@ class MovieViewModel: ObservableObject {
         }
     }
     
-    func getData(){
+    func getData() {
         service.fetchData { data in
             guard let data = data else {
                 DispatchQueue.main.async {
@@ -76,7 +76,9 @@ class MovieViewModel: ObservableObject {
         if searchText.isEmpty {
             self.cards = self.rowCards ?? []
         } else {
-            self.cards = self.rowCards?.filter { $0.content.title.localizedCaseInsensitiveContains(searchText) || $0.content.description.localizedCaseInsensitiveContains(searchText)  } ?? []
+            self.cards = self.rowCards?.filter {
+                $0.content.title.localizedCaseInsensitiveContains(searchText)
+                || $0.content.description.localizedCaseInsensitiveContains(searchText)  } ?? []
         }
     }
 }

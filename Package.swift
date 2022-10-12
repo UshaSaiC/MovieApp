@@ -9,14 +9,14 @@ import PackageDescription
 let package = Package(
     name: "Movie",
     platforms: [
-        .iOS(.v16),
+        .iOS(.v16)
     ],
     products: [
         .plugin(
             name: "SwiftLint",
-            targets: ["SwiftLint"]),
+            targets: ["SwiftLint"])
     ],
-    dependencies: [ .package(url: "https://github.com/lukepistrol/SwiftLintPlugin", from: "0.0.4"),
+    dependencies: [ .package(url: "https://github.com/lukepistrol/SwiftLintPlugin", from: "0.0.4")
     ],
     targets: [
         .target(

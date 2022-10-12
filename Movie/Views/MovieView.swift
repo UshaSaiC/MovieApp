@@ -12,34 +12,37 @@ struct MovieView: View {
     @ObservedObject private var model = MovieViewModel()
     
     var body: some View {
-        if model.isConnected {
-            if !model.sessionError {
-                NavigationView {
-                    List {
-                        ForEach(model.cards) { card in
-                            ZStack(alignment: .leading) {
-                                HStack {
-                                    MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
-                                }
-                                .listStyle(PlainListStyle())
-                                NavigationLink(destination: MovieDetailView(content: card.content)) {
-                                    EmptyView()
-                                }
-                                .opacity(0.0)
+        if !model.isConnected {
+            Text(model.connectionDescription)
+                .foregroundColor(AssetColors.textColor)
+                .font(.headline)
+                .padding(.horizontal, 10)
+        } else if model.sessionError {
+            Text(model.sessionErrorDescription)
+                .foregroundColor(AssetColors.textColor)
+                .font(.headline)
+                .padding(.horizontal, 10)
+        } else {
+            NavigationView {
+                List {
+                    ForEach(model.cards) { card in
+                        ZStack(alignment: .leading) {
+                            HStack {
+                                MovieImageView(imageURL: card.content.movieLogo, movieName: card.content.title)
                             }
+                            .listStyle(PlainListStyle())
+                            NavigationLink(destination: MovieDetailView(content: card.content)) {
+                                EmptyView()
+                            }
+                            .opacity(0.0)
                         }
                     }
-                    .navigationBarTitle(model.moviesNavigationBarTitle, displayMode: .inline)
-                    .searchable(text: $model.searchText, prompt: model.searchValue)
-                }.onAppear {
-                    model.getData()
                 }
-            } else {
-                Text(model.sessionErrorDescription)
+                .navigationBarTitle(model.moviesNavigationBarTitle, displayMode: .inline)
+                .searchable(text: $model.searchText, prompt: model.searchValue)
+            }.onAppear {
+                model.getData()
             }
-            
-        } else {
-            Text(model.connectionDescription)
         }
     }
 }

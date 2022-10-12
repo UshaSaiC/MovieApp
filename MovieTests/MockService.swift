@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MockService : ServiceProtocol {
+class MockService: ServiceProtocol {
     let mockData: MovieData?
     
     init(mockData: MovieData?) {

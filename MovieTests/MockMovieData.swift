@@ -13,13 +13,13 @@ extension MovieData {
     }
 }
 
-extension Cards{
+extension Cards {
     static func with(cards: [Card] = [Card.with()]) -> Cards {
         return Cards(cards: cards)
     }
 }
 
-extension Card{
+extension Card {
     static func with(id: String = "1",
                      content: ContentData = ContentData.with()) -> Card {
         return Card(

@@ -12,7 +12,7 @@ struct TextImageModifier: ViewModifier {
         content
             .font(.headline)
             .foregroundColor(AssetColors.textColor)
-            .background(Color(AssetColors.backgroundColor))
+            .background(AssetColors.backgroundColor)
             .padding(.vertical, 15)
             .frame(alignment: .center)
     }

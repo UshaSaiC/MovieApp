@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieDataManager: ServiceProtocol{
+class MovieDataManager: ServiceProtocol {
     
     let url: URL
     var session: URLSessionProtocol
@@ -20,12 +20,11 @@ class MovieDataManager: ServiceProtocol{
     }
     
     func fetchData(with completion: @escaping (MovieData?) -> Void) {
-        let task = session.dataTask(with: url) { data, response, error in
+        let task = session.dataTask(with: url) { data, _, error in
             if error != nil {
                 print("URLSession Error: \(String(describing: error?.localizedDescription))")
                 completion(nil)
-            }
-            else {
+            } else {
                 guard let data = data else {
                     completion(nil)
                     return

@@ -13,12 +13,12 @@ struct MovieImageView: View {
     var movieName: String
     
     var body: some View {
-        ZStack{
+        ZStack {
             if let safeURL = URL(string: imageURL) {
                 AsyncImage(url: safeURL) { image in
                     image
                         .resizable()
-                        .border(Color(AssetColors.borderColor))
+                        .border(AssetColors.borderColor)
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                         .padding(.horizontal, 5)
@@ -27,7 +27,7 @@ struct MovieImageView: View {
                 } placeholder: {
                     Image(systemName: "photo.on.rectangle")
                         .resizable()
-                        .border(Color(AssetColors.borderColor))
+                        .border(AssetColors.borderColor)
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: UIScreen.main.bounds.height, alignment: .center)
                         .padding(.horizontal, 5)

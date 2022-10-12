@@ -7,7 +7,7 @@
 
 import XCTest
 
-class MovieDataTests: XCTestCase{
+class MovieDataTests: XCTestCase {
     
     func testSuccessParserForMovieData() {
         let json = """
