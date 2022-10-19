@@ -9,11 +9,9 @@ import SwiftUI
 
 struct StarsView: View {
     
-    var rating: Double
     @ObservedObject private var model: StarsViewModel
     
     init(rating: Double, model: StarsViewModel? = nil) {
-        self.rating = rating
         self.model = model ?? StarsViewModel(rating: rating)
     }
     
