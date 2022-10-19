@@ -52,7 +52,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B2013BBF28F5FAFD009156FA /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B2013BC128F5FBA6009156FA /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		B20CDB1628F13ACC006725EB /* MockMovieData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieData.swift; sourceTree = "<group>"; };
 		B20CDB1828F14949006725EB /* MovieDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDataTests.swift; sourceTree = "<group>"; };
@@ -125,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				B2013BC128F5FBA6009156FA /* Package.swift */,
-				B2013BBF28F5FAFD009156FA /* .gitignore */,
 				B287B30928E1E2EF00F8C8DF /* Movie */,
 				B2B3CC5A28EE82DA00A654DD /* MovieTests */,
 				B287B30828E1E2EF00F8C8DF /* Products */,
